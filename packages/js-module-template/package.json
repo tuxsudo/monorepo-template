@@ -5,13 +5,13 @@
   "private": true,
   "main": "lib/cjs/index.js",
   "scripts": {
+    "check": "tsc --noEmit",
     "test": "jest",
     "test.watch": "jest --watch",
     "build": "npm-run-all -p build.*",
-    "build.cjs": "cross-env  BABEL_ENV=cjs babel src --out-dir lib/cjs",
-    "build.submodules": "cross-env BABEL_ENV=cjs babel src/submodules --out-dir .",
-    "build.es": "cross-env BABEL_ENV=production babel src --out-dir lib/es",
-    "clean": "shx rm -rf node_modules lib"
+    "build.cjs": "babel src --out-dir lib/cjs --extensions \".ts,.tsx,.js,.jsx\"",
+    "build.submodules": "babel src/submodules --out-dir . --extensions \".ts,.tsx,.js,.jsx\"",
+    "clean": "shx rm -rf node_modules lib add.js volume.js"
   },
   "peerDependencies": {
     "react": ">16.0",
@@ -27,7 +27,8 @@
     "cross-env": "^5.1.4",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
-    "styled-components": "^3.2.3"
+    "styled-components": "^3.2.3",
+    "typescript": "^2.8.1"
   },
   "dependencies": {}
 }
