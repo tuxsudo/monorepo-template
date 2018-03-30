@@ -1,10 +1,18 @@
 {
-  "presets": ["next/babel"],
-  "env": {
-    "test": {
-      "presets": [["env", { "modules": "commonjs" }], "next/babel"]
-    }
-  },
+  "presets": [
+    "@babel/typescript",
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "modules": "commonjs",
+        "targets": {
+          "browsers": "last 2 Chrome versions"
+        }
+      }
+    ]
+  ],
+
   "plugins": [
     [
       "styled-components",

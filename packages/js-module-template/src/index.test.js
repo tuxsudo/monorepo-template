@@ -9,5 +9,9 @@ test("index", () => {
 test("jsx", () => {
   const component = renderer.create(<Component />);
   const tree = component.toJSON();
-  expect(tree).toEqual({ type: "h1", props: {}, children: ["hi"] });
+  expect(tree).toEqual({
+    type: "h1",
+    props: { className: "src__HelloWorld-oafjbn-0 gWfRFf" },
+    children: ["hi"]
+  });
 });

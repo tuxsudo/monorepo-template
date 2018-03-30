@@ -1,0 +1,33 @@
+{
+  "name": "@hipshot/js-module-template",
+  "version": "1.0.0",
+  "description": "Template for create new package",
+  "private": true,
+  "main": "lib/cjs/index.js",
+  "scripts": {
+    "test": "jest",
+    "test.watch": "jest --watch",
+    "build": "npm-run-all -p build.*",
+    "build.cjs": "cross-env  BABEL_ENV=cjs babel src --out-dir lib/cjs",
+    "build.submodules": "cross-env BABEL_ENV=cjs babel src/submodules --out-dir .",
+    "build.es": "cross-env BABEL_ENV=production babel src --out-dir lib/es",
+    "clean": "shx rm -rf node_modules lib"
+  },
+  "peerDependencies": {
+    "react": ">16.0",
+    "react-dom": ">16.0",
+    "styled-components": ">3.2"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "@babel/preset-typescript": "^7.0.0-beta.42",
+    "cross-env": "^5.1.4",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^3.2.3"
+  },
+  "dependencies": {}
+}
