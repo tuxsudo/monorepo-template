@@ -1,0 +1,6 @@
+{
+  "*.js": ["eslint --fix", "git add"],
+  "*.json": ["prettier --parser json --write", "git add"],
+  "*.gql": ["prettier --parser graphql --write", "git add"],
+  ".md": ["prettier --parser markdown --write", "git add"]
+}

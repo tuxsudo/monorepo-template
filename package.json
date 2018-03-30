@@ -1,0 +1,40 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "monorepo template",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "echo hi",
+    "lint": "eslint **/*",
+    "format:json": "prettier --parser json --write **/*.json",
+    "format:js": "prettier --write **/*.js",
+    "format": "npm-run-all -p format:*",
+    "test": "jest"
+  },
+  "bolt": {
+    "workspaces": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-styled-components": "^1.5.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.0",
+    "next": "^5.1.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.11.1",
+    "raf": "^3.4.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.3.0"
+  },
+  "dependencies": {}
+}
